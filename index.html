@@ -3,17 +3,196 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Games — aakkagam</title>
+
+  <title>Free Two-Player Board Games Online | Aakkagam Games</title>
+  <meta name="description" content="Play free two-player board games in your browser. Start with align3 — Terni Lapilli (three men's morris) and Tamil kattam on one screen. No sign-up, no ads.">
+  <link rel="canonical" href="https://games.aakkagam.com/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#8b3a2b">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aakkagam Games">
+  <meta property="og:title" content="Free Two-Player Board Games Online | Aakkagam Games">
+  <meta property="og:description" content="Classic two-player board games playable free in the browser. align3 brings Terni Lapilli and Tamil kattam to one shared screen — no sign-up, no ads.">
+  <meta property="og:url" content="https://games.aakkagam.com/">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Free Two-Player Board Games Online | Aakkagam Games">
+  <meta name="twitter:description" content="Play Terni Lapilli and Tamil kattam free in your browser. Two players, one screen, no sign-up.">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://games.aakkagam.com/#website",
+        "url": "https://games.aakkagam.com/",
+        "name": "Aakkagam Games",
+        "description": "Free browser-based two-player board games rooted in ancient game traditions."
+      },
+      {
+        "@type": "VideoGame",
+        "@id": "https://games.aakkagam.com/align3/#game",
+        "name": "align3",
+        "alternateName": ["Terni Lapilli", "Tamil kattam", "Three men's morris"],
+        "url": "https://games.aakkagam.com/align3/",
+        "description": "A free browser version of three men's morris for two players on one device. Choose the Roman Terni Lapilli circle board or the Tamil kattam square board — two genuinely different rule sets, not skins.",
+        "genre": "Board game",
+        "playMode": "MultiPlayer",
+        "numberOfPlayers": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 2
+        },
+        "gamePlatform": "Web browser",
+        "applicationCategory": "Game",
+        "operatingSystem": "Any",
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "isPartOf": { "@id": "https://games.aakkagam.com/#website" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://games.aakkagam.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Terni Lapilli?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Terni Lapilli is an ancient Roman board game, an early form of three men's morris. Each player has three stones on a nine-point board; you win by aligning all three. Boards for it are scratched into Roman ruins across the former empire."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is Tamil kattam?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kattam is a Tamil three-in-a-row game played on a 3×3 grid of nine points. Unlike tic-tac-toe, each player has only three pieces: after placing them, players slide pieces along lines each turn until someone lines up all three."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I need an account or app to play?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Every game here runs directly in the browser with no download, no sign-up, and no ads. Open the game link on a phone, tablet, or computer and hand the device between the two players to take turns."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is three men's morris different from tic-tac-toe?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Tic-tac-toe ends after placement and often in a draw. In three men's morris each player has only three pieces, so after placing them the game continues: players move pieces along the board's lines every turn until one player forms a line of three."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
   <style>
-    body { font-family: system-ui, sans-serif; display: grid; place-items: center; min-height: 100vh; margin: 0; }
-    main { text-align: center; }
-    a { font-size: 1.25rem; }
+    :root {
+      --ink: #2b2320;
+      --paper: #faf6f0;
+      --accent: #8b3a2b;
+      --muted: #6b5f58;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --ink: #ece5df; --paper: #1d1917; --accent: #e0805f; --muted: #a3968e; }
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--ink);
+      background: var(--paper);
+      margin: 0;
+      line-height: 1.6;
+    }
+    main { max-width: 42rem; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
+    h1 { font-size: 2rem; line-height: 1.2; margin: 1rem 0 0.5rem; }
+    h2 { font-size: 1.4rem; margin-top: 2.5rem; color: var(--accent); }
+    h3 { font-size: 1.1rem; margin-top: 1.5rem; }
+    p.tagline { font-size: 1.15rem; color: var(--muted); margin-top: 0; }
+    a { color: var(--accent); }
+    .game-card {
+      border: 1px solid var(--muted);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .game-card h3 { margin-top: 0; }
+    .play {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--paper);
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+    footer { margin-top: 3rem; color: var(--muted); font-size: 0.9rem; }
+    dt { font-weight: bold; margin-top: 1.25rem; }
+    dd { margin: 0.25rem 0 0; }
   </style>
 </head>
 <body>
   <main>
-    <h1>Games</h1>
-    <p><a href="/align3/">align3 — Terni Lapilli / Tamil kattam</a></p>
+    <header>
+      <h1>Free Two-Player Board Games, Played in the Browser</h1>
+      <p class="tagline">Ancient games, one shared screen. No sign-up, no download, no ads.</p>
+    </header>
+
+    <p>Aakkagam Games rebuilds classic two-player board games from Roman and Tamil tradition as small, fast web games. Open a game on any phone, tablet, or computer, set it between you, and play face to face — the way these games were played for two thousand years.</p>
+
+    <section aria-labelledby="games-heading">
+      <h2 id="games-heading">Play Now</h2>
+
+      <article class="game-card">
+        <h3>align3 — Terni Lapilli &amp; Tamil kattam</h3>
+        <p>Three men's morris for two players: each side gets three stones on a nine-point board and races to line them up. align3 includes two historic variants that play genuinely differently, not just different looks:</p>
+        <ul>
+          <li><strong>Roman circle (Terni Lapilli):</strong> win on any of four spokes through the center, or any three consecutive points along the rim.</li>
+          <li><strong>Tamil square (kattam):</strong> win only on the eight straight lines of the 3×3 grid — rows, columns, and diagonals.</li>
+        </ul>
+        <p>Place your three stones, then slide them along the lines each turn. Legal moves light up as you drag, so you learn the rules by playing. A round takes two to five minutes.</p>
+        <a class="play" href="/align3/">Play align3 free</a>
+      </article>
+    </section>
+
+    <section aria-labelledby="about-heading">
+      <h2 id="about-heading">About These Games</h2>
+      <p>Three-in-a-row games with moving pieces appear across the ancient world. Romans scratched <em>Terni Lapilli</em> boards into the paving stones of forums and temple steps — you can still see them in Rome and across the former empire. In Tamil Nadu, children draw the same idea as a square <em>kattam</em> (grid) in the sand and play with pebbles and tamarind seeds.</p>
+      <p>Both are deeper than tic-tac-toe: because each player has only three pieces, the game never fills up and never stalls into an automatic draw. After the opening placements, every turn is a sliding move, and one careless slide loses the game.</p>
+    </section>
+
+    <section aria-labelledby="faq-heading">
+      <h2 id="faq-heading">Frequently Asked Questions</h2>
+      <dl>
+        <dt>What is Terni Lapilli?</dt>
+        <dd>An ancient Roman board game and early form of three men's morris. Each player has three stones on a nine-point board and wins by aligning all three. Boards survive scratched into Roman ruins across the former empire.</dd>
+
+        <dt>What is Tamil kattam?</dt>
+        <dd>A Tamil three-in-a-row game on a 3×3 grid of nine points. Each player has only three pieces: after placing them, players slide pieces along the lines each turn until someone lines up all three.</dd>
+
+        <dt>Do I need an account or app to play?</dt>
+        <dd>No. Every game runs directly in the browser with no download, no sign-up, and no ads. Open the link on any device and pass it between the two players to take turns.</dd>
+
+        <dt>How is three men's morris different from tic-tac-toe?</dt>
+        <dd>Tic-tac-toe ends after placement and usually draws. In three men's morris each player has just three pieces, so play continues after placement: pieces slide along the lines every turn until one player forms a line of three.</dd>
+      </dl>
+    </section>
+
+    <footer>
+      <p>Aakkagam Games · <a href="/align3/">align3</a> · Free and open — built for two players sharing one screen.</p>
+    </footer>
   </main>
 </body>
 </html>

@@ -1,0 +1,22 @@
+# Aakkagam Games
+
+> Free browser-based two-player board games rebuilt from ancient game traditions. No sign-up, no download, no ads — two players share one screen and pass the device between turns.
+
+Aakkagam Games publishes small, fast web implementations of historic abstract strategy games, starting with the three-in-a-row family (three men's morris). Each game is playable at a subpath of https://games.aakkagam.com/.
+
+## Games
+
+- [align3](https://games.aakkagam.com/align3/): Three men's morris for two players on one device. Each player has three stones on a nine-point board; place them, then slide along the lines until one player aligns all three. Includes two historically distinct variants with different win conditions:
+  - Roman circle (Terni Lapilli): win on any of 4 spokes through the center, or any 3 consecutive rim points. Based on the game whose boards are scratched into Roman ruins.
+  - Tamil square (kattam): win only on the 8 straight lines of a 3×3 grid (rows, columns, diagonals). Based on the Tamil pebble game drawn as a grid in the sand.
+
+## Key facts
+
+- All games are free, ad-free, and require no account.
+- Games run entirely in the browser (mobile and desktop); local hotseat play for exactly 2 players.
+- Three men's morris differs from tic-tac-toe: with only three pieces per player, play continues after placement with sliding moves, so games don't stall into automatic draws.
+
+## Site
+
+- [Home / game list](https://games.aakkagam.com/): landing page with all games and FAQ.
+- [Sitemap](https://games.aakkagam.com/sitemap.xml)
